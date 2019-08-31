@@ -1,5 +1,5 @@
 <template>
-  <div class='sonone'>
+  <div class='contents'>
     <!-- (1)子组件1接收data1数据 -->
     <div class='item'>这里是子组件1</div>
     <div class='item item2'>父组件使用props传输的数据为: {{data}}</div>
@@ -40,8 +40,8 @@ export default {
 };
 </script>
 
-<style scoped>
-.sonone {
+<style>
+.contents {
   background: #cccccc;
   display: flex;
   flex-direction: column;

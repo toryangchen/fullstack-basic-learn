@@ -14,7 +14,7 @@
     ></son-one>
 
     <button @click='child1Methods'>调用子组件的方法</button>
-
+    <br />
     <son-two></son-two>
     <son-three></son-three>
   </div>
