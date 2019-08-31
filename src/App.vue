@@ -1,6 +1,20 @@
 <template>
   <div id='app'>
-    <son-one></son-one>
+    <!-- (1) data1 父组件传数据；
+    (2) func1 接收子组件传来的数据；
+    (3) ref 定义子组件在父组件的引用；
+    (4.1) @fatherMethod 子组件用this.$emit('fatherMethod', 'hello')调用；
+    (4.2) :fatherMethod 子组件用 this.fatherMethod('hello')直接调用；-->
+    <son-one
+      data='this is data1 from top component'
+      @func1='getMsgFromSon1'
+      ref='sonone'
+      @fatherMethod='fatherMethod'
+      :fatherMethod='fatherMethod'
+    ></son-one>
+
+    <button @click='child1Methods'>调用子组件的方法</button>
+
     <son-two></son-two>
     <son-three></son-three>
   </div>
@@ -17,6 +31,22 @@ export default {
     SonOne,
     SonTwo,
     SonThree
+  },
+  methods: {
+    getMsgFromSon1(msg1) {
+      alert("从son1获取到的数据：" + msg1);
+      console.log("从son1获取到的数据：" + msg1);
+    },
+
+    child1Methods() {
+      // (3) 使用refs的方式调用子组件1的方法
+      this.$refs.sonone.useByFather();
+    },
+
+    fatherMethod(str) {
+      alert(str + "等待子组件的调用");
+      console.log(str + "等待子组件的调用");
+    }
   }
 };
 </script>
