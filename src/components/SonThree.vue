@@ -33,7 +33,6 @@ export default {
     },
     showAlert() {
       alert("组件3 alert：被组件2调用");
-      console.log("组件3 alert：被组件2调用");
     }
   }
 };

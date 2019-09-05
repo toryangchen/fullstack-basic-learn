@@ -42,7 +42,6 @@ export default {
   methods: {
     getMsgFromSon1(msg1) {
       alert("从son1获取到的数据：" + msg1);
-      console.log("从son1获取到的数据：" + msg1);
     },
 
     child1Methods() {
@@ -52,7 +51,6 @@ export default {
 
     fatherMethod(str) {
       alert(str + "等待子组件的调用");
-      console.log(str + "等待子组件的调用");
     }
   }
 };

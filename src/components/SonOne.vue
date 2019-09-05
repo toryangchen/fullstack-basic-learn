@@ -34,7 +34,6 @@ export default {
     },
     useByFather() {
       alert("子组件1中的方法，等待被父组件调用");
-      console.log("子组件1中的方法，等待被父组件调用");
     }
   }
 };
