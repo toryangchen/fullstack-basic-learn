@@ -17,6 +17,13 @@
     <br />
     <son-two></son-two>
     <son-three></son-three>
+    <div>
+      <router-link :to='{path:"/first"}' :style='{"margin-right":"10px"}'>first page</router-link>
+      <router-link :to='{path:"/second"}'>second page</router-link>
+    </div>
+    <Content>
+      <router-view></router-view>
+    </Content>
   </div>
 </template>
 
@@ -58,6 +65,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 </style>

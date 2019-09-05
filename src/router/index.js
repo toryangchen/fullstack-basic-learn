@@ -3,23 +3,23 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-const routers = [
+const routes = [
   {
     path: '/',
-    component: require('../App.vue'),
+    redirect: '/first',
   },
   {
     path: '/first',
-    component: require('../pages/first.vue'),
+    component: () => import('../pages/first.vue'),
   },
   {
     path: '/second',
-    component: require('../pages/second.vue'),
+    component: () => import('../pages/second.vue'),
   },
 ];
 
 const router = new VueRouter({
-  routers,
+  routes,
 });
 
 export default router;
