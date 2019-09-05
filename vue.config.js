@@ -12,6 +12,7 @@ module.exports = {
   //false，加速构建，无法生成map文件，一般在在生产环境设为false
   productionSourceMap: process.env.VUE_APP_DEBUG === 'debug',
   filenameHashing: true,
+  runtimeCompiler: true,
   pages: {
     index: {
       entry: 'src/main.js',
@@ -24,11 +25,6 @@ module.exports = {
       chunks: ['chunk-vendors', 'chunk-common', 'index'],
     },
   },
-  configureWebpack: () => {
-    return {
-      plugins: [],
-    };
-  },
   // 支持webpack-dev-server的所有选项
   devServer: {
     host: 'localhost',
@@ -36,5 +32,40 @@ module.exports = {
     https: false,
     open: false, //自动启动浏览器
     // proxy: 'http://localhost:4000' // 配置跨域处理，一个代理
+  },
+  /**
+   * 如果是对象：会通过webpack-merge合并到最终的配置中去
+   * 如果是函数：会接受被解析的配置作为参数，该函数及可以修改配置并不返回任何东西，也可以返回一个被克隆或合并过的配置版本
+   */
+  configureWebpack: config => {
+    if (process.env.NODE_ENV === 'production') {
+      // 为生产环境修改配置…
+    } else {
+      // 为开发环境修改配置…
+    }
+  },
+  /**
+   *
+   */
+  chainWebpack: config => {
+    config.module
+      .rule('vue')
+      .use('vue-loader')
+      .loader('vue-loader')
+      .tap(options => {
+        // 修改它的选项…
+        return options;
+      });
+  },
+  // css相关配置
+  css: {
+    // 启用 CSS modules
+    modules: false,
+    // 是否使用css分离插件
+    extract: true,
+    // 开启 CSS source maps?
+    sourceMap: false,
+    // css预设器配置项
+    loaderOptions: {},
   },
 };
