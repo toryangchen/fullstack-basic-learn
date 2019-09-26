@@ -1,5 +1,6 @@
 <template>
   <footer>
-    Visit our website for more documentation : <a href="https://nuxtjs.org" target="_blank">nuxtjs.org</a>
+    Welcome to toryang's website :
+    <a href="https://www.toryang.top" target="_blank">toryang.top</a>
   </footer>
 </template>
