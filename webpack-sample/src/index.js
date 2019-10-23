@@ -18,7 +18,9 @@
 // var root = document.getElementById('root')
 // root.append(img)
 
-import './index.scss';
+// import './index.scss';
+//
+// var root = document.getElementById('root');
+// root.innerHTML = ('<div class="iconfont iconchufangxiyouyan-">abc<div>');
 
-var root = document.getElementById('root');
-root.innerHTML = ('<div class="iconfont iconchufangxiyouyan-">abc<div>');
+consele.log('hello')

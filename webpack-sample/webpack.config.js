@@ -11,6 +11,8 @@ const {
 
 module.exports = {
 	mode: 'development',
+	devtool: 'cheap-module-eval-source-map', // development
+	// devtool: 'cheap-module-source-map' // production
 	entry: {
 		main: './src/index.js',
 		// sub: './src/index.js' // 打包多个文件
