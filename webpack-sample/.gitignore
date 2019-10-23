@@ -2,5 +2,5 @@
 node_modules/
 *-lock.*
 
-dist/images/
-bundle.js
+dist/*
+!dist/index.html

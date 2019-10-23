@@ -16,6 +16,11 @@ module.exports = {
 						limit: 10240
 					}
 				}
+		}, {
+				test: /\.(eot|ttf|svg|woff)$/,
+				use: {
+					loader: 'file-loader',
+				}
 		},
 			{
 				test: /\.scss$/,
@@ -25,7 +30,7 @@ module.exports = {
 						loader: 'css-loader',
 						options: {
 							importLoaders: 2,
-							modules: true,
+							// modules: true,
 						}
 					},
 					'sass-loader',
