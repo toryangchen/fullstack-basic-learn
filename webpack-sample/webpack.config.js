@@ -1,4 +1,9 @@
-const path = require('path')
+const path = require('path');
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+// html-webpack-plugin
+// 会在打包结束后自动生成html文件，
+// 并把打包生成的js文件自动引入到该html文件中
 
 module.exports = {
 	mode: 'development',
@@ -38,6 +43,9 @@ module.exports = {
 				]
 		}]
 	},
+	plugins: [new HtmlWebpackPlugin({
+		template: 'src/public/index.html'
+	})],
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist')
