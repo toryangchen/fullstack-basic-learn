@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // 会在打包结束后自动生成html文件，
 // 并把打包生成的js文件自动引入到该html文件中
 
+const webpack = require('webpack');
 const {
 	CleanWebpackPlugin
 } = require('clean-webpack-plugin');
@@ -19,7 +20,9 @@ module.exports = {
 	},
 	devServer: {
 		contentBase: 'dist/',
-		open: true
+		open: true,
+		hot: true,
+		hotOnly: true
 	},
 	module: {
 		rules: [{
@@ -38,6 +41,14 @@ module.exports = {
 					loader: 'file-loader',
 				}
 		},
+			{
+				test: /\.css$/,
+				use: [
+				'style-loader',
+				'css-loader',
+				'postcss-loader'
+			]
+	},
 			{
 				test: /\.scss$/,
 				use: [
@@ -59,9 +70,10 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: 'src/public/index.html'
 		}),
+		new webpack.HotModuleReplacementPlugin()
 	],
 	output: {
-		publicPath: '/',
+		// publicPath: '/',
 		// publicPath: 'http://www.cdn.com',
 		// filename: '[name].js',
 		filename: 'bundle.js',
