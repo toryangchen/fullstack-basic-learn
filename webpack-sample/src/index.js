@@ -23,4 +23,4 @@
 // var root = document.getElementById('root');
 // root.innerHTML = ('<div class="iconfont iconchufangxiyouyan-">abc<div>');
 
-consele.log('hello')
+console.log('hello 111')

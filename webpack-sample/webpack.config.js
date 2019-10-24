@@ -17,6 +17,10 @@ module.exports = {
 		main: './src/index.js',
 		// sub: './src/index.js' // 打包多个文件
 	},
+	devServer: {
+		contentBase: 'dist/',
+		open: true
+	},
 	module: {
 		rules: [{
 				test: /\.(jpg|png|gif)$/,
@@ -57,6 +61,7 @@ module.exports = {
 		}),
 	],
 	output: {
+		publicPath: '/',
 		// publicPath: 'http://www.cdn.com',
 		// filename: '[name].js',
 		filename: 'bundle.js',
