@@ -1,3 +1,4 @@
+import "@babel/polyfill"
 // import Header from './fileloader/header'
 // import Sidebar from './fileloader/sidebar'
 // import Content from './fileloader/content'
@@ -37,14 +38,23 @@
 // }
 //
 
-import counter from './hotload/counter';
-import number from './hotload/number';
-counter();
-number();
+// import counter from './hotload/counter';
+// import number from './hotload/number';
+// counter();
+// number();
+//
+// if (module.hot) {
+// 	module.hot.accept('./hotload/number', () => {
+// 		document.body.removeChild(document.getElementById('number'));
+// 		number();
+// 	})
+// }
+//
+const arr = [
+  new Promise(() => {}),
+  new Promise(() => {})
+]
 
-if (module.hot) {
-	module.hot.accept('./hotload/number', () => {
-		document.body.removeChild(document.getElementById('number'));
-		number();
-	})
-}
+arr.map(item => {
+	console.log(item);
+})
